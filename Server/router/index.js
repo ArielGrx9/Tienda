@@ -7,11 +7,10 @@ const ruta = express();
 ruta.get("/", (req, res)=>{
 
 
-    const sql = 'SELECT * FROM prueba';
+    const sql = 'SELECT * FROM productos';
     connection.query(sql, (error, results)=>{
         if(error) throw error;
-
-        res.send(results);
+        res.json(results);
     })
    
 })
